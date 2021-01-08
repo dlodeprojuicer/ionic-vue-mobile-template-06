@@ -1,0 +1,7 @@
+{
+  "name": "ionic-blank",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}
