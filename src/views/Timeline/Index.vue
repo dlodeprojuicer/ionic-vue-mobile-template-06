@@ -39,8 +39,8 @@
         />
 
         <ion-buttons class="reactions">
-          <ion-button>
-            <ion-icon :icon="heartOutline"></ion-icon>
+          <ion-button @click="likeFn">
+            <ion-icon :icon="liked ? heart : heartOutline" :style="liked ? 'color: red;' : null"></ion-icon>
           </ion-button>
           <ion-button>
             <ion-icon :icon="chatbubbleOutline"></ion-icon>
@@ -76,7 +76,17 @@ import {
   IonCardSubtitle
 } from "@ionic/vue";
 
-import { personCircleOutline, search, filterOutline, closeOutline, addCircleOutline, heartOutline, paperPlaneOutline, chatbubbleOutline } from "ionicons/icons";
+import { 
+  personCircleOutline, 
+  search, 
+  filterOutline, 
+  closeOutline, 
+  addCircleOutline, 
+  heartOutline, 
+  paperPlaneOutline, 
+  chatbubbleOutline, 
+  heart 
+} from "ionicons/icons";
 
 export default {
   name: "Explorer",
@@ -102,13 +112,23 @@ export default {
       heartOutline,
       paperPlaneOutline,
       personCircleOutline,
-      chatbubbleOutline
+      chatbubbleOutline,
+      heart
     };
   },
   computed: {
     posts() {
-      console.log(this.$store.getters.posts)
       return this.$store.getters.posts;
+    }
+  },
+  data() {
+    return {
+      liked: false
+    }
+  },
+  methods: {
+    likeFn() {
+      this.liked = !this.liked;
     }
   }
 };
@@ -121,6 +141,7 @@ export default {
 // }
 ion-toolbar {
   --background: #000;
+  color: #ffffff;
   padding: 0;
 }
 

@@ -115,6 +115,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+ion-toolbar, .profile-info-one {
+  color: #ffffff;
+}
 .avatar img {
   width: 80px;
   height: 80px;
@@ -131,9 +134,11 @@ export default {
 
 .profile-info-two {
   h3 {
+    color: #ffffff;
     margin: 0;
   }
   p {
+    color: #ffffff;
     margin: 0;
   }
 }

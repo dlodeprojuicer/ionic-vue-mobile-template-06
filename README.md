@@ -1,6 +1,6 @@
 ## Ionic Vue Mobile Template 06
 
-![Netlify Status](https://api.netlify.com/api/v1/badges/2a4bd023-1a21-4dd0-89dd-9a2854b3d056/deploy-status)
+![Netlify Status](https://api.netlify.com/api/v1/badges/fc2b8d51-2242-440c-8f6c-f283e77154c4/deploy-status)]
 
 Instagram-inspired [Ionic Vue](https://ionicframework.com/vue) template.
 
