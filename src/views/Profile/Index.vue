@@ -164,5 +164,8 @@ ion-grid.timeline > ion-row > ion-col {
   margin: 20px 0 -10px 0;
   text-align: center;
   font-size: 25px;
+  >ion-row > ion-col > ion-icon {
+    color: #ffffff;
+  }
 }
 </style>
