@@ -22,7 +22,7 @@ npm run lint
 ```
 
 ## Design
-![Screenshot](/design.jpg "Screenshot")
+![Screenshot|316x500, 75%](/design.jpg "Screenshot")
 
 ## Native
 
