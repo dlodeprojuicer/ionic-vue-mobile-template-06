@@ -114,7 +114,7 @@ export default {
     return {
       stories: [
         {
-          name: "Makazole",
+          name: "Makazol",
           image: "assets/makazoli.png"
         },
         {
@@ -134,7 +134,7 @@ export default {
           image: "assets/lewis.png"
         },
         {
-          name: "Makazole",
+          name: "Makazol",
           image: "assets/makazoli.png"
         },
         {

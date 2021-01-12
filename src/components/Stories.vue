@@ -46,7 +46,7 @@ img {
 }
 
 ion-card-title {
-  font-size: 2.8vw !important;
+  font-size: 13px !important;
   text-align: left;
   color: #fff;
 }
