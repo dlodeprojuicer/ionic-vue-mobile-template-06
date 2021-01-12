@@ -38,17 +38,7 @@
           :alt="item.name"
         />
 
-        <ion-buttons class="reactions">
-          <ion-button @click="likeFn">
-            <ion-icon :icon="liked ? heart : heartOutline" :style="liked ? 'color: red;' : null"></ion-icon>
-          </ion-button>
-          <ion-button>
-            <ion-icon :icon="chatbubbleOutline"></ion-icon>
-          </ion-button>
-          <ion-button>
-            <ion-icon :icon="paperPlaneOutline"></ion-icon>
-          </ion-button>
-        </ion-buttons>
+        <Reactions />
 
         <ion-card-header>
           <ion-card-subtitle class="likes" v-if="item.likes > 0">{{ item.likes }} likes</ion-card-subtitle>
@@ -62,6 +52,8 @@
 </template>
 
 <script>
+import Reactions from "./../../components/Reactions";
+
 import {
   IonPage,
   IonHeader,
@@ -101,7 +93,8 @@ export default {
     IonContent,
     IonCard,
     IonCardHeader,
-    IonCardSubtitle
+    IonCardSubtitle,
+    Reactions
   },
   setup() {
     return {
@@ -119,16 +112,6 @@ export default {
   computed: {
     posts() {
       return this.$store.getters.posts;
-    }
-  },
-  data() {
-    return {
-      liked: false
-    }
-  },
-  methods: {
-    likeFn() {
-      this.liked = !this.liked;
     }
   }
 };
