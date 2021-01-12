@@ -25,11 +25,7 @@
     </ion-header>
 
     <ion-content :fullscreen="true">
-      <ion-header collapse="condense">
-        <ion-toolbar>
-          <ion-title size="large">Explorer</ion-title>
-        </ion-toolbar>
-      </ion-header>
+      <Stories :data="stories" />
 
       <ion-card v-for="(item, index) in posts" :key="index">
         <div class="post-author">
@@ -58,12 +54,12 @@
 
 <script>
 import Reactions from "./../../components/Reactions";
+import Stories from "./../../components/Stories";
 
 import {
   IonPage,
   IonHeader,
   IonToolbar,
-  IonTitle,
   IonButtons,
   IonButton,
   IonIcon,
@@ -91,7 +87,6 @@ export default {
     IonPage,
     IonHeader,
     IonToolbar,
-    IonTitle,
     IonIcon,
     IonButton,
     IonButtons,
@@ -99,7 +94,8 @@ export default {
     IonCard,
     IonCardHeader,
     IonCardSubtitle,
-    Reactions
+    Reactions,
+    Stories
   },
   setup() {
     return {
@@ -113,6 +109,52 @@ export default {
       chatbubbleOutline,
       heart
     };
+  },
+  data() {
+    return {
+      stories: [
+        {
+          name: "Makazole",
+          image: "assets/makazoli.png"
+        },
+        {
+          name: "snoop",
+          image: "assets/snoop.png"
+        },
+        {
+          name: "max",
+          image: "assets/max.png"
+        },
+        {
+          name: "snoop",
+          image: "assets/snoop.png"
+        },
+        {
+          name: "lewis",
+          image: "assets/lewis.png"
+        },
+        {
+          name: "Makazole",
+          image: "assets/makazoli.png"
+        },
+        {
+          name: "snoop",
+          image: "assets/snoop.png"
+        },
+        {
+          name: "max",
+          image: "assets/max.png"
+        },
+        {
+          name: "snoop",
+          image: "assets/snoop.png"
+        },
+        {
+          name: "lewis",
+          image: "assets/lewis.png"
+        },
+      ]
+    }
   },
   computed: {
     posts() {
