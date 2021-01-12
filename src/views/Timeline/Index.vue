@@ -3,12 +3,12 @@
   <ion-page>
     <ion-header :translucent="true">
       <ion-toolbar>
-          <img
-            class="logo"
-            src="/assets/logo.png"
-            alt="Instagram"
-            width="130"
-          />
+        <img
+          class="logo"
+          src="/assets/logo.png"
+          alt="Instagram"
+          width="130"
+        />
 
         <ion-buttons slot="end">
           <ion-button>
@@ -37,9 +37,10 @@
           class="my-card-image"
           :src="`places/${item.image}`"
           :alt="item.name"
+          @click="likeDoubleClick()"
         />
 
-        <Reactions />
+        <Reactions :likePost="likePost" @likeClick="likeClick" />
 
         <ion-card-header>
           <ion-card-subtitle class="likes" v-if="item.likes > 0">{{ item.likes }} likes</ion-card-subtitle>
@@ -112,6 +113,9 @@ export default {
   },
   data() {
     return {
+      likePost: false,
+      click: undefined,
+      clickType: 'Click or Doubleclick ME',
       stories: [
         {
           name: "Makazol",
@@ -159,6 +163,27 @@ export default {
   computed: {
     posts() {
       return this.$store.getters.posts;
+    }
+  },
+  methods: {
+    likeDoubleClick() {
+      return new Promise ((resolve) => {
+        if (this.click) {
+          clearTimeout(this.click)
+          resolve('Detected DoubleClick');
+          this.likePost = !this.likePost;
+          this.click = undefined;
+          return;
+        }
+
+        this.click = setTimeout(() => {
+         this.click = undefined;
+         resolve('Detected SingleClick')
+        }, 400)
+      })
+    },
+    likeClick() {
+      this.likePost = !this.likePost;
     }
   }
 };

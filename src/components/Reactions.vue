@@ -2,7 +2,7 @@
 <template>
 	<ion-buttons class="reactions">
 		<ion-button @click="likeFn">
-			<ion-icon :icon="liked ? heart : heartOutline" :style="liked ? 'color: red;' : null"></ion-icon>
+			<ion-icon :icon="likePost ? heart : heartOutline" :style="likePost ? 'color: red;' : null"></ion-icon>
 		</ion-button>
 		<ion-button>
 			<ion-icon :icon="chatbubbleOutline"></ion-icon>
@@ -28,12 +28,19 @@ import {
 } from "ionicons/icons";
 
 export default {
-  name: "Explorer",
+	name: "Reactions",
+  props: {
+    likePost: {
+      type: Boolean,
+      required: true,
+      default: false,
+    },
+  },
   components: {
     IonIcon,
     IonButton,
     IonButtons
-  },
+	},
   setup() {
     return {
       heartOutline,
@@ -42,14 +49,9 @@ export default {
       heart
     };
   },
-  data() {
-    return {
-      liked: false
-    }
-  },
   methods: {
     likeFn() {
-      this.liked = !this.liked;
+			this.$emit("likeClick", !this.likePost);
     }
   }
 };
