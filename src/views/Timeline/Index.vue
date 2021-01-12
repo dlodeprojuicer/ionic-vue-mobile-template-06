@@ -3,7 +3,12 @@
   <ion-page>
     <ion-header :translucent="true">
       <ion-toolbar>
-        <ion-title>Instagram</ion-title>
+          <img
+            class="logo"
+            src="/assets/logo.png"
+            alt="Instagram"
+            width="130"
+          />
 
         <ion-buttons slot="end">
           <ion-button>
@@ -118,24 +123,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// ion-header {
-//   padding: 0;
-//   margin: 0;
-// }
 ion-toolbar {
   --background: #000;
   color: #ffffff;
   padding: 0;
 }
 
-.reactions {
-  color: #fff;
-  ion-button, button {
-    margin: 0;
-    padding: 0;
-  }
+.logo {
+  padding: 10px 0 0 10px;
 }
-
 .post-author {
   margin: 10px;
   color: #ffffff;
