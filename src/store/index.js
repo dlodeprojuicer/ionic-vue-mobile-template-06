@@ -5,7 +5,7 @@ const store = createStore({
     posts: [
       {
         name: "SnoopDogg",
-        image: "brazil.jpg",
+        image: "assets/images/brazil.jpg",
         id: 1,
         likes: 22349,
         description:
@@ -13,12 +13,12 @@ const store = createStore({
       },
       {
         name: "BrookeShaden",
-        image: "hawaii.jpg",
+        image: "assets/images/hawaii.jpg",
         id: 3
       },
       {
         name: "ThisIsRory",
-        image: "panama.jpg",
+        image: "assets/images/panama.jpg",
         id: 2,
         likes: 390,
         description:
@@ -27,15 +27,60 @@ const store = createStore({
       {
         name: "Jamaican_tourism",
         slug: "jamaica",
-        image: "jamaica.jpg",
+        image: "assets/images/jamaica.jpg",
         id: 4
       },
     ],
+    stories: [
+      {
+        name: "Makazol",
+        image: "assets/images/makazoli.png"
+      },
+      {
+        name: "snoop",
+        image: "assets/images/snoop.png"
+      },
+      {
+        name: "max",
+        image: "assets/images/max.png"
+      },
+      {
+        name: "snoop",
+        image: "assets/images/snoop.png"
+      },
+      {
+        name: "lewis",
+        image: "assets/images/lewis.png"
+      },
+      {
+        name: "Makazol",
+        image: "assets/images/makazoli.png"
+      },
+      {
+        name: "snoop",
+        image: "assets/images/snoop.png"
+      },
+      {
+        name: "max",
+        image: "assets/images/max.png"
+      },
+      {
+        name: "snoop",
+        image: "assets/images/snoop.png"
+      },
+      {
+        name: "lewis",
+        image: "assets/images/lewis.png"
+      },
+    ]
   },
 
   getters: {
     posts({ posts }) {
       return posts;
+    },
+    stories({ stories }) {
+      return stories;
     }
   },
   mutations: {},

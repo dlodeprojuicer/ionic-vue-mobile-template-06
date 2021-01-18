@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "@ionic/vue-router";
 import Tabs from "../views/Tabs.vue";
-import Timeline from "../views/Timeline/Index.vue";
+import Timeline from "../views/Timeline.vue";
 
 const routes = [
   {
@@ -34,7 +34,7 @@ const routes = [
       {
         name: "profile",
         path: "profile",
-        component: () => import("@/views/Profile/Index.vue")
+        component: () => import("@/views/Profile.vue")
       },
     ],
   },

@@ -5,7 +5,7 @@
       <ion-toolbar>
         <img
           class="logo"
-          src="/assets/logo.png"
+          src="/assets/images/logo.png"
           alt="Instagram"
           width="130"
         />
@@ -34,8 +34,8 @@
         </div>
 
         <img
-          class="my-card-image"
-          :src="`places/${item.image}`"
+          class="card-image"
+          :src="item.image"
           :alt="item.name"
           @click="likeDoubleClick()"
         />
@@ -54,8 +54,8 @@
 </template>
 
 <script>
-import Reactions from "./../../components/Reactions";
-import Stories from "./../../components/Stories";
+import Reactions from "./../components/Reactions";
+import Stories from "./../components/Stories";
 
 import {
   IonPage,
@@ -115,54 +115,15 @@ export default {
     return {
       likePost: false,
       click: undefined,
-      clickType: 'Click or Doubleclick ME',
-      stories: [
-        {
-          name: "Makazol",
-          image: "assets/makazoli.png"
-        },
-        {
-          name: "snoop",
-          image: "assets/snoop.png"
-        },
-        {
-          name: "max",
-          image: "assets/max.png"
-        },
-        {
-          name: "snoop",
-          image: "assets/snoop.png"
-        },
-        {
-          name: "lewis",
-          image: "assets/lewis.png"
-        },
-        {
-          name: "Makazol",
-          image: "assets/makazoli.png"
-        },
-        {
-          name: "snoop",
-          image: "assets/snoop.png"
-        },
-        {
-          name: "max",
-          image: "assets/max.png"
-        },
-        {
-          name: "snoop",
-          image: "assets/snoop.png"
-        },
-        {
-          name: "lewis",
-          image: "assets/lewis.png"
-        },
-      ]
+      clickType: 'Click or Doubleclick ME'
     }
   },
   computed: {
     posts() {
       return this.$store.getters.posts;
+    },
+    stories() {
+      return this.$store.getters.stories;
     }
   },
   methods: {
@@ -213,7 +174,7 @@ ion-toolbar {
     margin: 0 0 0 5px;
   }
 }
-.my-card-image {
+.card-image {
   width: 100%;
 }
 
