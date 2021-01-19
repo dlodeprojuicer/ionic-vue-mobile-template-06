@@ -15,11 +15,7 @@ const routes = [
         path: "",
         name: "timeline",
         component: Timeline,
-      },
-      {
-        path: "destination",
-        redirect: { name: "timeline" },
-      },
+      }
     ],
   },
 
