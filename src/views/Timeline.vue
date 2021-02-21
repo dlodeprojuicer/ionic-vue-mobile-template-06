@@ -25,7 +25,7 @@
     </ion-header>
 
     <ion-content :fullscreen="true">
-      <Stories :data="stories" />
+      <!-- <Stories :data="stories" /> -->
 
       <ion-card v-for="(item, index) in posts" :key="index">
         <div class="post-author">
@@ -55,7 +55,7 @@
 
 <script>
 import Reactions from "./../components/Reactions";
-import Stories from "./../components/Stories";
+// import Stories from "./../components/Stories";
 
 import {
   IonPage,
@@ -96,7 +96,7 @@ export default {
     IonCardHeader,
     IonCardSubtitle,
     Reactions,
-    Stories
+    // Stories
   },
   setup() {
     return {
